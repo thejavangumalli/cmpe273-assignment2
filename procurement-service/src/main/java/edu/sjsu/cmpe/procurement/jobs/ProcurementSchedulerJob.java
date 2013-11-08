@@ -48,7 +48,7 @@ public class ProcurementSchedulerJob extends Job {
 		if(checkMessages)
 		{
 		ClientResponse response=ProcurementService.jerseyClient.create().resource(
-				"http://54.215.210.214:9000/orders").type("application/json").post(ClientResponse.class,input1);
+				"http://54.219.156.168:9000/orders").type("application/json").post(ClientResponse.class,input1);
 		System.out.println(response.getEntity(String.class));
 		}
 		else {
@@ -57,7 +57,7 @@ public class ProcurementSchedulerJob extends Job {
 		
 		
 		ClientResponse serverResponse=ProcurementService.jerseyClient.create().resource(
-				"http://54.215.210.214:9000/orders/83832").accept("application/json").get(ClientResponse.class);
+				"http://54.219.156.168:9000/orders/83832").accept("application/json").get(ClientResponse.class);
 		String output=serverResponse.getEntity(String.class);
 		System.out.println(output);
 		JSONObject obj=new JSONObject(output);
